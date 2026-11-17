@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>嶋森航 | 小説家・ライトノベル作家 公式ポートフォリオ</title>
+  <meta name="description" content="小説家・ライトノベル作家 嶋森航（しまもり こう）の公式サイト。商業作品『冷徹皇子の帝国奪還計画』（HJ文庫）やWeb代表作、受賞歴、執筆依頼について。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-base: #090d16;
+      --bg-surface: #111827;
+      --bg-card: rgba(17, 24, 39, 0.78);
+      --gold: #d4af70;
+      --gold-soft: rgba(212, 175, 112, 0.25);
+      --gold-glow: rgba(212, 175, 112, 0.12);
+      --azure: #60a5fa;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --border: rgba(255, 255, 255, 0.08);
+      --font-serif: 'Noto Serif JP', serif;
+      --font-sans: 'Noto Sans JP', sans-serif;
+      --font-display: 'Cinzel', serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.75;
+      overflow-x: hidden;
+      background-image:
+        radial-gradient(circle at 15% 15%, rgba(59, 130, 246, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 85% 25%, rgba(212, 175, 112, 0.10) 0%, transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(30, 58, 138, 0.14) 0%, transparent 50%);
+    }
+
+    /* Subtle starfield overlay */
+    .stars {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        radial-gradient(1px 1px at 12% 24%, rgba(255,255,255,0.45), transparent),
+        radial-gradient(1.5px 1.5px at 34% 68%, rgba(212,175,112,0.5), transparent),
+        radial-gradient(1px 1px at 67% 19%, rgba(255,255,255,0.35), transparent),
+        radial-gradient(1.5px 1.5px at 88% 52%, rgba(96,165,250,0.4), transparent),
+        radial-gradient(1px 1px at 49% 88%, rgba(255,255,255,0.3), transparent),
+        radial-gradient(1px 1px at 78% 82%, rgba(212,175,112,0.35), transparent);
+      z-index: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(9, 13, 22, 0.82);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .brand-name {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--text-main);
+    }
+
+    .brand-en {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 24px;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    @media (max-width: 680px) {
+      nav {
+        display: none;
+      }
+    }
+
+    /* Hero */
+    .hero {
+      padding: 96px 0 80px;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--gold-soft);
+      background: var(--gold-glow);
+      color: var(--gold);
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      margin-bottom: 24px;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      line-height: 1.3;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #ffffff 30%, #e7d0a3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle-en {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      letter-spacing: 0.28em;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+
+    .hero-lead {
+      max-width: 640px;
+      margin: 0 auto 36px;
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 26px;
+      border-radius: 6px;
+      font-size: 0.92rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #d4af70 0%, #b58c47 100%);
+      color: #0b0f19;
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(212, 175, 112, 0.22);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(212, 175, 112, 0.34);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--gold-soft);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text-main);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: var(--gold-glow);
+    }
+
+    /* Section Headings */
+    section {
+      padding: 72px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-en {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      letter-spacing: 0.24em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .section-line {
+      width: 48px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 14px auto 0;
+    }
+
+    /* Featured Publication */
+    .book-showcase {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-soft);
+      border-radius: 14px;
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 36px;
+      align-items: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    }
+
+    @media (max-width: 820px) {
+      .book-showcase {
+        grid-template-columns: 1fr;
+        padding: 24px;
+      }
+    }
+
+    .book-cover-mock {
+      aspect-ratio: 10 / 14.5;
+      border-radius: 8px;
+      background: linear-gradient(155deg, #1b2845 0%, #0f172a 55%, #1f192d 100%);
+      border: 1px solid rgba(212, 175, 112, 0.45);
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.6);
+    }
+
+    .book-cover-mock::before {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border: 1px solid rgba(212, 175, 112, 0.25);
+      pointer-events: none;
+    }
+
+    .book-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .book-mock-title {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      font-weight: 900;
+      line-height: 1.45;
+      color: #fff;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+    }
+
+    .book-mock-meta {
+      font-size: 0.78rem;
+      color: #cbd5e1;
+      border-top: 1px solid rgba(212, 175, 112, 0.25);
+      padding-top: 10px;
+    }
+
+    .book-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 3px 10px;
+      border-radius: 4px;
+      background: rgba(96, 165, 250, 0.12);
+      color: #93c5fd;
+      border: 1px solid rgba(96, 165, 250, 0.25);
+    }
+
+    .tag-gold {
+      background: var(--gold-glow);
+      color: var(--gold);
+      border-color: var(--gold-soft);
+    }
+
+    .book-info h3 {
+      font-family: var(--font-serif);
+      font-size: 1.65rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .book-credits {
+      font-size: 0.88rem;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .book-synopsis {
+      color: #d1d5db;
+      font-size: 0.95rem;
+      margin-bottom: 22px;
+    }
+
+    .volume-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .volume-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+
+    .volume-card strong {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+
+    .volume-card span {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* Filter Tabs */
+    .filter-bar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+
+    .filter-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 7px 18px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: var(--gold-glow);
+    }
+
+    /* Works Grid */
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 22px;
+    }
+
+    .work-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .work-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold-soft);
+    }
+
+    .work-card.hidden {
+      display: none;
+    }
+
+    .work-meta-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .work-status {
+      font-size: 0.74rem;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .work-title {
+      font-family: var(--font-serif);
+      font-size: 1.18rem;
+      font-weight: 700;
+      line-height: 1.45;
+      margin-bottom: 10px;
+    }
+
+    .work-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .work-stats {
+      font-size: 0.78rem;
+      color: #cbd5e1;
+      padding: 8px 12px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 6px;
+      margin-bottom: 16px;
+    }
+
+    .work-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .link-chip {
+      font-size: 0.8rem;
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--gold-soft);
+      color: var(--gold);
+    }
+
+    .link-chip:hover {
+      background: var(--gold);
+      color: #0b0f19;
+    }
+
+    /* Timeline / Biography */
+    .bio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .bio-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .bio-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+    }
+
+    .bio-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      margin-bottom: 14px;
+      color: var(--gold);
+    }
+
+    .timeline {
+      list-style: none;
+      border-left: 2px solid var(--gold-soft);
+      padding-left: 20px;
+    }
+
+    .timeline li {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .timeline li:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: -26px;
+      top: 7px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 10px var(--gold);
+    }
+
+    .tl-date {
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+    }
+
+    .tl-text {
+      font-size: 0.92rem;
+      color: var(--text-main);
+    }
+
+    /* Contact / Footer */
+    .contact-box {
+      background: linear-gradient(135deg, rgba(212, 175, 112, 0.08) 0%, rgba(17, 24, 39, 0.9) 100%);
+      border: 1px solid var(--gold-soft);
+      border-radius: 14px;
+      padding: 40px 28px;
+      text-align: center;
+    }
+
+    .contact-box p {
+      max-width: 580px;
+      margin: 12px auto 26px;
+      color: var(--text-muted);
+      font-size: 0.94rem;
+    }
+
+    .sns-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 36px 24px 48px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+
+  <header>
+    <div class="nav-inner">
+      <a href="#" class="brand">
+        <span class="brand-name">嶋森 航</span>
+        <span class="brand-en">KO SHIMAMORI</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#books">商業書籍</a></li>
+          <li><a href="#works">Web作品</a></li>
+          <li><a href="#profile">経歴・受賞歴</a></li>
+          <li><a href="#contact">ご依頼・SNS</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-badge">✦ LIGHT NOVEL AUTHOR / NOVELIST ✦</div>
+      <h1 class="hero-title">嶋森 航</h1>
+      <p class="hero-subtitle-en">KO SHIMAMORI OFFICIAL PORTFOLIO</p>
+      <p class="hero-lead">
+        戦記・歴史の緻密な駆け引きと、逆境から這い上がる爽快なドラマを。<br>
+        第3回HJ小説大賞後期受賞・HJ文庫『冷徹皇子の帝国奪還計画』著者。
+      </p>
+      <div class="hero-actions">
+        <a href="#books" class="btn btn-primary">商業書籍を見る</a>
+        <a href="#works" class="btn btn-outline">Web連載作品を読む</a>
+        <a href="https://x.com/koshimamori" target="_blank" rel="noopener" class="btn btn-outline">X (@koshimamori)</a>
+      </div>
+    </section>
+
+    <!-- Published Books -->
+    <section id="books">
+      <div class="section-head">
+        <div class="section-en">Published Works</div>
+        <h2 class="section-title">商業出版作品</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="book-showcase">
+        <div class="book-cover-mock">
+          <div class="book-label">HJ BUNKO · SERIES</div>
+          <div class="book-mock-title">冷徹皇子の<br>帝国奪還計画</div>
+          <div class="book-mock-meta">
+            著：嶋森 航<br>
+            イラスト：くろぎり<br>
+            全2巻 好評発売中
+          </div>
+        </div>
+
+        <div class="book-info">
+          <div class="book-tags">
+            <span class="tag tag-gold">第3回HJ小説大賞後期 受賞作</span>
+            <span class="tag">HJ文庫</span>
+            <span class="tag">異世界戦記・内政無双</span>
+          </div>
+          <h3>冷徹皇子の帝国奪還計画</h3>
+          <p class="book-credits">著：嶋森航 ／ イラスト：くろぎり（ホビージャパン・HJ文庫）</p>
+          <p class="book-synopsis">
+            クーデターにより一族を惨殺された帝国の元皇子ヘンリックに、現代日本人の魂が憑依した。「どんな手を使ってでも、必ず帝国を奪還してやる！」――弱小国への婿入りを好機と捉えた彼は、現代知識による新産業の創出と精鋭私兵隊の育成で、腐敗貴族を手玉に取り大出世を遂げていく痛快内政×復讐戦記。書籍化にあたり一から全編書き下ろし。
+          </p>
+
+          <div class="volume-grid">
+            <div class="volume-card">
+              <strong>第1巻（2025年1月31日発売）</strong>
+              <span>定価 748円（税込） / ISBN 9784798637495</span>
+            </div>
+            <div class="volume-card">
+              <strong>第2巻（2025年12月27日発売）</strong>
+              <span>定価 748円（税込） / ISBN 9784798640280</span>
+            </div>
+          </div>
+
+          <div class="work-links">
+            <a href="https://firecross.jp/hjbunko/series/569" target="_blank" rel="noopener" class="btn btn-primary">HJ文庫 公式シリーズページ</a>
+            <a href="https://firecross.jp/hjbunko/product/1968" target="_blank" rel="noopener" class="btn btn-outline">1巻詳細</a>
+            <a href="https://firecross.jp/hjbunko/product/2134" target="_blank" rel="noopener" class="btn btn-outline">2巻詳細</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Web Works -->
+    <section id="works">
+      <div class="section-head">
+        <div class="section-en">Web Novels</div>
+        <h2 class="section-title">Web連載・代表作</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">すべて</button>
+        <button class="filter-btn" data-filter="history">歴史・戦記</button>
+        <button class="filter-btn" data-filter="fantasy">異世界ファンタジー</button>
+        <button class="filter-btn" data-filter="modern">現代・スポーツ / 短編</button>
+      </div>
+
+      <div class="works-grid">
+        <!-- 六芒星が頂に -->
+        <article class="work-card" data-category="history">
+          <div>
+            <div class="work-meta-top">
+              <span class="tag tag-gold">第1回歴史・時代小説大賞 受賞</span>
+              <span class="work-status">完結済（427話）</span>
+            </div>
+            <h3 class="work-title">六芒星が頂に〜星天に掲げよ！二つ剣ノ銀杏紋〜</h3>
+            <p class="work-desc">
+              戦国時代の近江国の小さな国人領主・寺倉家の嫡男に転生した大学生が、前世の知識と「寺倉六芒星」ら家臣の力を借りて、戦乱の世で民が笑う世を築く本格歴史内政・戦記大河。
+            </p>
+          </div>
+          <div>
+            <div class="work-stats">小説家になろう 3,500万PV突破 ／ カクヨム ★1,844</div>
+            <div class="work-links">
+              <a href="https://kakuyomu.jp/works/1177354054897753837" target="_blank" rel="noopener" class="link-chip">カクヨムで読む</a>
+              <a href="https://mypage.syosetu.com/1038470/" target="_blank" rel="noopener" class="link-chip">なろうマイページ</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 八曜の旗印 -->
+        <article class="work-card" data-category="history">
+          <div>
+            <div class="work-meta-top">
+              <span class="tag">歴史・逆行転生</span>
+              <span class="work-status">完結済（101話）</span>
+            </div>
+            <h3 class="work-title">【リメイク版】八曜の旗印 加賀守護三男転生記</h3>
+            <p class="work-desc">
+              戦国時代、一向一揆に権力を奪われた加賀守護・冨樫家の架空の三男に転生した現代人。加賀が空白地帯となる歴史の転機を見据え、お家再興と領国防衛に挑む。
+            </p>
+          </div>
+          <div>
+            <div class="work-stats">カクヨム ★944 ／ なろう ブックマーク2,700超</div>
+            <div class="work-links">
+              <a href="https://kakuyomu.jp/users/Kiki0914/works" target="_blank" rel="noopener" class="link-chip">カクヨムで読む</a>
+              <a href="https://mypage.syosetu.com/1038470/" target="_blank" rel="noopener" class="link-chip">なろうで読む</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Buddy!! -->
+        <article class="work-card" data-category="modern">
+          <div>
+            <div class="work-meta-top">
+              <span class="tag">現代・スポーツ</span>
+              <span class="work-status">連載中</span>
+            </div>
+            <h3 class="work-title">Buddy!!</h3>
+            <p class="work-desc">
+              日々の労働に疲弊した元ヨット部の社畜サラリーマン×お嬢様中学生が、セーリング競技でオリンピックを目指すバディ青春スポーツドラマ。
+            </p>
+          </div>
+          <div>
+            <div class="work-stats">カクヨム 現代ドラマ・スポーツ</div>
+            <div class="work-links">
+              <a href="https://kakuyomu.jp/users/Kiki0914/works" target="_blank" rel="noopener" class="link-chip">カクヨムで読む</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 冷徹皇子 Web版 -->
+        <article class="work-card" data-category="fantasy">
+          <div>
+            <div class="work-meta-top">
+              <span class="tag tag-gold">書籍化原作（Web版）</span>
+              <span class="work-status">完結済（33話）</span>
+            </div>
+            <h3 class="work-title">冷徹皇子の帝国奪還計画（Web版）</h3>
+            <p class="work-desc">
+              第3回HJ小説大賞後期受賞作『銀鉱翠花のエクドール』のWeb連載版。書籍版では全編新規に書き直されており、違った展開も楽しめます。
+            </p>
+          </div>
+          <div>
+            <div class="work-stats">カクヨム ★470 ／ 異世界ファンタジー</div>
+            <div class="work-links">
+              <a href="https://kakuyomu.jp/users/Kiki0914/works" target="_blank" rel="noopener" class="link-chip">カクヨムで読む</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 短編：馬稼者の最期 -->
+        <article class="work-card" data-category="history">
+          <div>
+            <div class="work-meta-top">
+              <span class="tag">歴史短編</span>
+              <span class="work-status">完結済（読切）</span>
+            </div>
+            <h3 class="work-title">馬稼者の最期と加賀百万石の灯火</h3>
+            <p class="work-desc">
+              一向一揆に主権を奪われた加賀で、織田信長の越前侵攻を機に動き出す史実ベースの英雄譚。加賀百万石の礎を築いた男たちの隠された物語。
+            </p>
+          </div>
+          <div>
+            <div class="work-stats">約22,000字の読み切り作品</div>
+            <div class="work-links">
+              <a href="https://kakuyomu.jp/users/Kiki0914/works" target="_blank" rel="noopener" class="link-chip">カクヨムで読む</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 短編：義理チョコ / 野球 -->
+        <article class="work-card" data-category="modern">
+          <div>
+            <div class="work-meta-top">
+              <span class="tag">短編集</span>
+              <span class="work-status">完結済</span>
+            </div>
+            <h3 class="work-title">義理チョコ10年分の幼馴染 ／ 他短編</h3>
+            <p class="work-desc">
+              ラブコメ短編『義理チョコ10年分の幼馴染』や、MLBワールドシリーズ第7戦を描くハードボイルド『プロ初打席がワールドシリーズ第七戦になった男の話』など幅広い短編を公開中。
+            </p>
+          </div>
+          <div>
+            <div class="work-stats">恋愛・スポーツ・純文学短編</div>
+            <div class="work-links">
+              <a href="https://kakuyomu.jp/users/Kiki0914/works" target="_blank" rel="noopener" class="link-chip">カクヨム一覧</a>
+              <a href="https://mypage.syosetu.com/1038470/" target="_blank" rel="noopener" class="link-chip">なろう一覧</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Profile & Awards -->
+    <section id="profile">
+      <div class="section-head">
+        <div class="section-en">Profile &amp; Awards</div>
+        <h2 class="section-title">プロフィール・受賞歴</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="bio-grid">
+        <div class="bio-card">
+          <h3>著者プロフィール</h3>
+          <p style="color: #d1d5db; font-size: 0.94rem; margin-bottom: 16px;">
+            <strong>嶋森 航（しまもり こう）</strong><br>
+            神奈川県出身の小説家・ライトノベル作家。
+          </p>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">
+            戦国時代・異世界を舞台にした緻密な内政・戦記ジャンルを得意とし、Web小説投稿サイトを中心に累計数千万PV規模のヒット作を執筆。近年は現代スポーツや漫画原作など、ジャンルの幅を広げた創作活動にも取り組んでいる。
+          </p>
+        </div>
+
+        <div class="bio-card">
+          <h3>主な受賞・出版実績</h3>
+          <ul class="timeline">
+            <li>
+              <div class="tl-date">2020</div>
+              <div class="tl-text">ノベルアップ＋『第1回 歴史・時代小説大賞』長編部門 入賞（『六芒星が頂に〜星天に掲げよ！二つ剣ノ銀杏紋〜』）</div>
+            </li>
+            <li>
+              <div class="tl-date">2023.07</div>
+              <div class="tl-text">『第3回 HJ小説大賞後期』受賞（受賞作『銀鉱翠花のエクドール』）</div>
+            </li>
+            <li>
+              <div class="tl-date">2025.01</div>
+              <div class="tl-text">HJ文庫『冷徹皇子の帝国奪還計画』第1巻 発売にて商業デビュー</div>
+            </li>
+            <li>
+              <div class="tl-date">2025.12</div>
+              <div class="tl-text">HJ文庫『冷徹皇子の帝国奪還計画』第2巻 発売</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & SNS -->
+    <section id="contact">
+      <div class="contact-box">
+        <div class="section-en">Contact &amp; Links</div>
+        <h2 class="section-title">執筆のご依頼・公式リンク</h2>
+        <p>
+          小説執筆・シリーズ構成・漫画原作などのお仕事のご相談、その他ご連絡はメールまたは X（@koshimamori）のダイレクトメッセージよりお気軽にお問い合わせください。<br>
+          <strong style="color: var(--gold);">Mail: koko0914apple@gmail.com</strong>
+        </p>
+        <div class="sns-row">
+          <a href="mailto:koko0914apple@gmail.com" class="btn btn-primary">メールで問い合わせる</a>
+          <a href="https://x.com/koshimamori" target="_blank" rel="noopener" class="btn btn-outline">X (@koshimamori)</a>
+          <a href="https://kakuyomu.jp/users/Kiki0914" target="_blank" rel="noopener" class="btn btn-outline">カクヨム</a>
+          <a href="https://mypage.syosetu.com/1038470/" target="_blank" rel="noopener" class="btn btn-outline">小説家になろう</a>
+          <a href="https://note.com/de_tkr" target="_blank" rel="noopener" class="btn btn-outline">note</a>
+          <a href="https://bsky.app/profile/koshimamori.bsky.social" target="_blank" rel="noopener" class="btn btn-outline">Bluesky</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Ko Shimamori. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.work-card');
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        buttons.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+
+        cards.forEach((card) => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
